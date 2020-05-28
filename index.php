@@ -54,7 +54,7 @@
           <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#team">Team</a></li>
           <li><a href="#contact">Contact Us</a></li>
-          <li class="get-started"><a href="#about">Get Started</a></li>
+          <li class="get-started"><a href="assets/Bakale_Gift&SouvenirsCatalogue.pdf" download>Our Catalogue</a></li>
         </ul>
       </nav><!-- .nav-menu -->
 
@@ -69,7 +69,7 @@
       <div class=" col-lg-6 py-5 py-lg-0 order-2 order-lg-1" data-aos="fade-right">
         <h1>Your new digital experience with Bocor</h1>
         <h2>We are team of talanted designers making websites with Bootstrap</h2>
-        <a href="#about" class="btn-get-started scrollto">Get Started</a>
+        <a href="assets/Bakale_Gift&SouvenirsCatalogue.pdf" download class="btn-get-started scrollto">Our Catalogue</a>
       </div>
       <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left">
         <img src="assets/img/logo.png" class="img-fluid" alt="">
@@ -138,28 +138,22 @@
             <div class="content d-flex flex-column justify-content-center">
               <h3 data-aos="fade-in" data-aos-delay="100">About Bakale Gifts & Souvenirs</h3>
               <p data-aos="fade-in">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+                Bakale_Gift&Souvenirs is an Art and Craft Company, which Specializes in Designing and Production of Gift Items, Promotional Items, and Event, Corporate and Metal Souvenirs, it was Founded in 2020. Our Head Office, located in Kano State, Nigeria.
               </p>
               <div class="row">
-                <div class="col-md-6 icon-box" data-aos="fade-up">
+                <div class="col-md-10 icon-box" data-aos="fade-up">
                   <i class="bx bx-receipt"></i>
-                  <h4><a href="#">Corporis voluptates sit</a></h4>
-                  <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+                  <h4 class="text-center"><a href="#">VISION</a></h4>
+                  <p>Our Vision is to be the Best, Most Trusted and Preferred Organization in the Art and Craft Sector.</p>
                 </div>
-                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-md-10 icon-box" data-aos="fade-up" data-aos-delay="100">
                   <i class="bx bx-cube-alt"></i>
-                  <h4><a href="#">Ullamco laboris nisi</a></h4>
-                  <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
-                </div>
-                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
-                  <i class="bx bx-images"></i>
-                  <h4><a href="#">Labore consequatur</a></h4>
-                  <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
-                </div>
-                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
-                  <i class="bx bx-shield"></i>
-                  <h4><a href="#">Beatae veritatis</a></h4>
-                  <p>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta</p>
+                  <h4 class="text-center"><a href="#">MISSION</a></h4>
+                  <p> 1. To Combine the Aggressive Strategic Marketing with Quality Products to our Valued Customers.
+                    <br>
+    2. To deliver Operational Excellence in every corner of the company that meet or exceed our Commitments.
+    <br>
+    3. To devote ourselves in Promoting and Value the brand of our Clients - Providing Customized, Good, Beauty and Distinctive added value to brand of our Clients. </p>
                 </div>
               </div>
             </div><!-- End .content-->
@@ -611,7 +605,7 @@
 
         <div class="row  justify-content-center">
           <div class="col-lg-6">
-            <h3>Bocor</h3>
+            <h3>Bakale Gift & Souvenirs</h3>
             <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
           </div>
         </div>
