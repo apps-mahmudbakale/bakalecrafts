@@ -114,7 +114,7 @@ class App{
                         </i>
                         View
                     </a>
-                    <a class="btn btn-info btn-sm" href="#">
+                    <a class="btn btn-info btn-sm" href="serviceEdit.php?id=${service.service_id}">
                         <i class="fas fa-pencil-alt">
                         </i>
                         Edit

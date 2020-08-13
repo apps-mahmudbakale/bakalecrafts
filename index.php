@@ -1,3 +1,4 @@
+<?php include 'connection.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +6,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Bakale Gift & Souvenirs - Index</title>
+  <title>Bakale Arts & Crafts Co. - Index</title>
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
 
@@ -25,23 +26,16 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: Bocor - v2.0.0
-  * Template URL: https://bootstrapmade.com/bocor-bootstrap-template-nice-animation/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
 
   <!-- ======= Header ======= -->
   <header id="header">
-    <div class="container d-flex">
+    <div class="container d-flex" style="max-width: 1390px">
 
       <div class="logo mr-auto">
-        <h1 class="text-light"><a href="index.html">Bakale_Gift&Souvenirs<span>.</span></a></h1>
+        <h1 class="text-light"><a href="index.html">Bakale Arts & Crafts Co., Ltd<span>.</span></a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
@@ -53,6 +47,7 @@
           <li><a href="#services">Services</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#team">Team</a></li>
+          <li><a href="#team">Certifications</a></li>
           <li><a href="#contact">Contact Us</a></li>
           <li class="get-started"><a href="assets/Bakale_Gift&SouvenirsCatalogue.pdf" download>Our Catalogue</a></li>
         </ul>
@@ -67,12 +62,12 @@
     <div class="container">
       <div class="row d-flex align-items-center">
       <div class=" col-lg-6 py-5 py-lg-0 order-2 order-lg-1" data-aos="fade-right">
-        <h1>Your new digital experience with Bocor</h1>
-        <h2>We are team of talanted designers making websites with Bootstrap</h2>
+        <h1>Your new Arts & Craft experience with Bakale Arts & Crafts Co., Ltd</h1>
+        <h2>We are a leading multi niche e-commerce platform for customized merchandise, we offer a wide range of corporate gifts, promotional items, event souvenirs, hotel and airline supplies etc. We have created a platform for your gifting’s, promotions, advertising and essential supplies, our aim is to be your go to platform in Africa.</h2>
         <a href="assets/Bakale_Gift&SouvenirsCatalogue.pdf" download class="btn-get-started scrollto">Our Catalogue</a>
       </div>
       <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left">
-        <img src="assets/img/logo.png" class="img-fluid" alt="">
+        <img src="assets/img/BGS Logo Tranfnt.fw.png" class="img-fluid" alt="">
       </div>
     </div>
     </div>
@@ -138,7 +133,7 @@
             <div class="content d-flex flex-column justify-content-center">
               <h3 data-aos="fade-in" data-aos-delay="100">About Bakale Gifts & Souvenirs</h3>
               <p data-aos="fade-in">
-                Bakale_Gift&Souvenirs is an Art and Craft Company, which Specializes in Designing and Production of Gift Items, Promotional Items, and Event, Corporate and Metal Souvenirs, it was Founded in 2020. Our Head Office, located in Kano State, Nigeria.
+                Bakale Arts & Crafts Co., Ltd. is an Art and Craft Company, which Specializes in Designing and Production of Promotional items and Souvenirs, It was Founded in 2020. <br>  Our Head Office, located in Kano State, Nigeria.
               </p>
               <div class="row">
                 <div class="col-md-10 icon-box" data-aos="fade-up">
@@ -173,19 +168,25 @@
         </div>
 
         <div class="row">
+          <?php 
+          $query = mysqli_query($db,"SELECT * FROM services");
+          while($row = mysqli_fetch_array($query)){
+           ?>
+           <br>
           <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-right">
             <div class="card">
               <div class="card-img">
-                <img src="assets/img/services-1.jpg" alt="...">
+                <img src="assets/<?php echo $row['caption']; ?>" alt="...">
               </div>
               <div class="card-body">
-                <h5 class="card-title"><a href="">Temporibus laudantium</a></h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+                <h5 class="card-title"><a href=""><?php echo $row['title']; ?></a></h5>
+                <p class="card-text"><?php echo $row['body']; ?></p>
                 <div class="read-more"><a href="#"><i class="icofont-arrow-right"></i> Read More</a></div>
               </div>
             </div>
           </div>
-          <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-left">
+        <?php } ?>
+<!--           <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-left">
             <div class="card">
               <div class="card-img">
                 <img src="assets/img/services-2.jpg" alt="...">
@@ -208,8 +209,7 @@
                 <p class="card-text">Nemo enim ipsam voluptatem quia voluptas sit aut odit aut fugit, sed quia magni dolores eos qui ratione voluptatem sequi nesciunt Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet</p>
                 <div class="read-more"><a href="#"><i class="icofont-arrow-right"></i> Read More</a></div>
               </div>
-            </div>
-          </div>
+            </divy          </div>
           <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-left">
             <div class="card">
               <div class="card-img">
@@ -221,7 +221,7 @@
                 <div class="read-more"><a href="#"><i class="icofont-arrow-right"></i> Read More</a></div>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
 
       </div>
@@ -605,8 +605,8 @@
 
         <div class="row  justify-content-center">
           <div class="col-lg-6">
-            <h3>Bakale Gift & Souvenirs</h3>
-            <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
+            <h3>Bakale Arts & Crafts Co., Ltd.</h3>
+            <p>We Are Creative, Be With Us</p>
           </div>
         </div>
 
@@ -631,14 +631,14 @@
 
     <div class="container footer-bottom clearfix">
       <div class="copyright">
-        &copy; Copyright <strong><span>Bocor</span></strong>. All Rights Reserved
+        &copy; Copyright <?php echo date('Y') ?> <strong><span> Bakale Arts & Crafts Co., Ltd</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/bocor-bootstrap-template-nice-animation/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        Designed by <a href="">Bnetworks IT Solutions</a>
       </div>
     </div>
   </footer><!-- End Footer -->
