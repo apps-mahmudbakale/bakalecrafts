@@ -246,7 +246,6 @@
       <div class="card">
         <div class="card-header">
           <h3 class="card-title">Service Detail</h3>
-
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
               <i class="fas fa-minus"></i></button>
@@ -324,7 +323,7 @@
 <script src="../assets/dist/js/demo.js"></script>
 <script src="../assets/js/App.js"></script>
 <script>
-  var service_id = '<?php echo $_GET['id']; ?>';
+  var service_id = '<?php echo base64_decode($_GET['id']) ?>';
   fetch('../../api/getSingleService.php',{
       method:'POST', 
       headers: {
@@ -335,10 +334,10 @@
     })
     .then((res) => res.json())
     .then((data) => {
-      console.log(htdata.body);
+      console.log(data.body);
         document.getElementById('title').innerText= data.title;
         document.getElementById('body').innerHTML= data.body;
-        document.getElementById('caption').innerHTML= `<img class='img-fluid pad' src='../assets/${data.caption}' alt='Caption'>`;
+        document.getElementById('caption').innerHTML= `<img class='img-fluid pad img-rounded img-bordered-sm' src='../assets/${data.caption}' alt='Caption'>`;
     })
 </script>
 </body>

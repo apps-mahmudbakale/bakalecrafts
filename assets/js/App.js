@@ -109,12 +109,12 @@ class App{
                             <img alt="Avatar" class="table-avatar" src="../assets/${service.caption}">
                 </td>
                 <td class="project-actions text-right">
-                    <a class="btn btn-primary btn-sm" href="serviceDetails.php?id=${service.service_id}">
+                    <a class="btn btn-primary btn-sm" href="serviceDetails.php?id=${btoa(service.service_id)}">
                         <i class="fas fa-folder">
                         </i>
                         View
                     </a>
-                    <a class="btn btn-info btn-sm" href="serviceEdit.php?id=${service.service_id}">
+                    <a class="btn btn-info btn-sm" href="serviceEdit.php?id=${btoa(service.service_id)}">
                         <i class="fas fa-pencil-alt">
                         </i>
                         Edit

@@ -62,8 +62,8 @@
     <div class="container">
       <div class="row d-flex align-items-center">
       <div class=" col-lg-6 py-5 py-lg-0 order-2 order-lg-1" data-aos="fade-right">
-        <h1>Your new Arts & Craft experience with Bakale Arts & Crafts Co., Ltd</h1>
-        <h2>We are a leading multi niche e-commerce platform for customized merchandise, we offer a wide range of corporate gifts, promotional items, event souvenirs, hotel and airline supplies etc. We have created a platform for your gifting’s, promotions, advertising and essential supplies, our aim is to be your go to platform in Africa.</h2>
+        <h1>Your new Arts and Crafts experience with Bakale Arts & Crafts Co., Ltd</h1>
+        <h2>We are a leading professional manufacturers of customized merchandise, we offer a wide range of corporate souvenirs and promotional items. We have creative and dynamic team which are ready to serve your needs. We are ready to be partners with different souvenirs dealers. Our aim is to be your best souvenirs suppliers in Africa.</h2>
         <a href="assets/Bakale_Gift&SouvenirsCatalogue.pdf" download class="btn-get-started scrollto">Our Catalogue</a>
       </div>
       <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left">
@@ -131,7 +131,7 @@
           <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-lg-start"></div>
           <div class="col-xl-7 pl-0 pl-lg-5 pr-lg-1 d-flex align-items-stretch">
             <div class="content d-flex flex-column justify-content-center">
-              <h3 data-aos="fade-in" data-aos-delay="100">About Bakale Gifts & Souvenirs</h3>
+              <h3 data-aos="fade-in" data-aos-delay="100">About Bakale Arts and Crafts Co., Ltd</h3>
               <p data-aos="fade-in">
                 Bakale Arts & Crafts Co., Ltd. is an Art and Craft Company, which Specializes in Designing and Production of Promotional items and Souvenirs, It was Founded in 2020. <br>  Our Head Office, located in Kano State, Nigeria.
               </p>

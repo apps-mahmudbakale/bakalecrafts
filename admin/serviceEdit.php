@@ -1,6 +1,8 @@
 <?php 
 include '../connection.php';
-$id = $_GET['id'];
+$id = base64_decode($_GET['id']);
+$query = mysqli_query($db,"SELECT * FROM services WHERE service_id ='$id'");
+$row = mysqli_fetch_array($query);
  ?>
 <!DOCTYPE html>
 <html>
@@ -246,48 +248,12 @@ $id = $_GET['id'];
     <!-- Main content -->
     <section class="content">
        <!-- Default box -->
-      <div class="card">
-        <div class="card-header">
-          <h3 class="card-title">Services</h3>
-
-          <div class="card-tools">
-            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-              <i class="fas fa-minus"></i></button>
-            <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
-              <i class="fas fa-times"></i></button>
-          </div>
-        </div>
-        <div class="card-body p-0">
-          <table class="table table-striped projects">
-              <thead>
-                  <tr>
-                      <th style="width: 1%">
-                          #
-                      </th>
-                      <th style="width: 20%">
-                          Service Name
-                      </th>
-                      <th style="width: 30%">
-                          Sevice Caption
-                      </th>
-                      <th style="width: 20%">
-                      </th>
-                  </tr>
-              </thead>
-              <tbody id='serviceList'>
-                 
-              </tbody>
-          </table>
-        </div>
-        <!-- /.card-body -->
-      </div>
-      <!-- /.card -->
       <form action="" method="POST" id="serviceForm" enctype="Multipart/form-data">
       <div class="row">
         <div class="col-md-12">
           <div class="card card-primary">
             <div class="card-header">
-              <h3 class="card-title">New Service</h3>
+              <h3 class="card-title">Edit Service</h3>
 
               <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -298,11 +264,11 @@ $id = $_GET['id'];
                <div id="statusMsg"></div>
               <div class="form-group">
                 <label for="inputName">Service Name</label>
-                <input type="text" id="Name" name="name" class="form-control">
+                <input type="text" id="Name" name="name" value="<?php echo $row['title'] ?>" class="form-control">
               </div>
               <div class="form-group">
                 <label for="inputDescription">Service Description</label>
-                <textarea id="Description" name="description" class="textarea form-control" rows="4"></textarea>
+                <textarea id="Description" name="description" class="textarea form-control" rows="4"><?php echo $row['body']?></textarea>
               </div>
               <div class="form-group">
                 <label for="inputProjectLeader">Service Caption</label>
@@ -379,7 +345,7 @@ $id = $_GET['id'];
         e.preventDefault();
         $.ajax({
             type: 'POST',
-            url: '../api/addService.php',
+            url: '../api/editService.php',
             data: new FormData(document.getElementById('serviceForm')),
             dataType: 'json',
             contentType: false,
