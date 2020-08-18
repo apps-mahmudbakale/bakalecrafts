@@ -1,5 +1,6 @@
 <?php 
 include '../connection.php';
+include '../heroku.connection.php';
 $id = base64_decode($_GET['id']);
 $query = mysqli_query($db,"SELECT * FROM services WHERE service_id ='$id'");
 $row = mysqli_fetch_array($query);

@@ -1,5 +1,6 @@
 <?php 
 require_once '../connection.php';
+require_once '../heroku.connection.php';
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
 $uploadDir ='../assets/';

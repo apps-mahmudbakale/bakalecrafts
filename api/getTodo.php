@@ -2,6 +2,7 @@
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
 require_once '../connection.php';
+require_once '../heroku.connection.php';
 
 
 $query = mysqli_query($db, "SELECT * FROM todos");

@@ -1,4 +1,7 @@
-<?php include 'connection.php'; ?>
+<?php 
+include 'connection.php'; 
+include 'heroku.connection.php'; 
+?>
 <!DOCTYPE html>
 <html lang="en">
 

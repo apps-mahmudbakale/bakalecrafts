@@ -1,6 +1,7 @@
 <?php 
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
+require_once '../heroku.connection.php';
 require_once '../connection.php';
 
 	$data = json_decode(file_get_contents('php://input'));
