@@ -1,7 +1,7 @@
 <?php 
 session_start();
 include '../connection.php';
-include '../heroku.connection.php';
+//include '../heroku.connection.php';
  ?>
 <!DOCTYPE html>
 <html>

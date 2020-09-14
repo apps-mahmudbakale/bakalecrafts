@@ -2,8 +2,6 @@
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
 require_once '../connection.php';
-require_once '../heroku.connection.php';
-
 $data = json_decode(file_get_contents('php://input'));
 $service_id  = $data->service_id;
 $query = mysqli_query($db, "SELECT * FROM services WHERE service_id ='$service_id'");

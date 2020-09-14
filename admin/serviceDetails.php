@@ -174,7 +174,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="team.php" class="nav-link">
               <i class="nav-icon fas fa-users"></i>
               <p>
                 Team
@@ -182,7 +182,7 @@
             </a>
           </li> 
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="works.php" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 Our Works

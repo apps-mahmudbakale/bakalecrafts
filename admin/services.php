@@ -1,3 +1,14 @@
+<?php
+require_once '../connection.php';
+if (isset($_GET['id'])) {
+
+  $id = base64_decode($_GET['id']);
+    mysqli_query($db,"DELETE FROM services WHERE service_id ='$id'");
+
+    header('Location:services.php');
+}
+
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -174,7 +185,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="team.php" class="nav-link">
               <i class="nav-icon fas fa-users"></i>
               <p>
                 Team
@@ -182,7 +193,7 @@
             </a>
           </li> 
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="works.php" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 Our Works
@@ -255,7 +266,7 @@
         </div>
         <div class="card-body p-0">
           <table class="table table-striped projects">
-              <thead>
+             <thead>
                   <tr>
                       <th style="width: 1%">
                           #
@@ -313,7 +324,7 @@
       <div class="row">
         <div class="col-12">
           <a href="#" class="btn btn-secondary">Cancel</a>
-          <input type="submit" value="Create new Porject" id="submitBtn" class="btn btn-success float-right">
+          <input type="submit" value="Create new Service" id="submitBtn" class="btn btn-success float-right">
         </div>
       </div>
     </form>

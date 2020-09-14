@@ -119,7 +119,7 @@ class App{
                         </i>
                         Edit
                     </a>
-                    <a class="btn btn-danger btn-sm" href="#">
+                    <a class="btn btn-danger btn-sm" href="?id=${btoa(service.service_id)}">
                         <i class="fas fa-trash">
                         </i>
                         Delete
@@ -131,4 +131,98 @@ class App{
 			document.getElementById('serviceList').innerHTML = serviceOuput;
 		})
 	}
+
+		teamList(){
+			fetch('../../api/getTeams.php')
+			.then((res) => res.json())
+			.then((data) => {
+				var teamOuput = '';
+				var sn =0;
+				data.teams.forEach( function(team) {
+					sn++;
+
+					teamOuput +=`<tr>
+					<td>${sn}</td>
+					 <td>
+		                  <a>
+		                     ${team.name}
+		                  </a>
+	                </td>
+	                <td>
+	                            <img alt="Avatar" class="img img-rounded" style="width:3.9rem" src="../assets/${team.picture}">
+	                </td>
+	                <td>
+		                  <a>
+		                     ${team.phone}
+		                  </a>
+	                </td>
+	                <td>
+		                  <a>
+		                     ${team.rank}
+		                  </a>
+	                </td>
+	                <td>
+		                  <a>
+		                     ${team.rank}
+		                  </a>
+	                </td>
+	                <td>
+		                  <a>
+		                     ${team.rank}
+		                  </a>
+	                </td>
+	                <td>
+		                  <a>
+		                     ${team.rank}
+		                  </a>
+	                </td>
+	                <td>
+		                  <a>
+		                     ${team.rank}
+		                  </a>
+	                </td>
+	                <td class="btn-group">
+	                    <a class="btn btn-info btn-sm" href="teamEdit.php?id=${btoa(team.id)}">
+	                        <i class="fas fa-pencil-alt"></i>
+	                    </a>
+	                    <a class="btn btn-danger btn-sm" href="?id=${btoa(team.id)}">
+	                        <i class="fas fa-trash"></i>
+	                    </a>
+	                </td>
+	                </tr>`;
+				});
+
+				document.getElementById('teamList').innerHTML = teamOuput;
+			})
+		}
+			worksList(){
+				fetch('../../api/getWorks.php')
+				.then((res) => res.json())
+				.then((data) => {
+					var workOuput = '';
+					var sn =0;
+					data.works.forEach( function(work) {
+						sn++;
+
+						workOuput +=`<tr>
+						<td>${sn}</td>
+						 <td>
+			                  <a>
+			                     ${work.name}
+			                  </a>
+		                </td>
+		                <td>
+		                            <img alt="Avatar" class="img img-rounded" style="width:3.9rem" src="../assets/${work.image}">
+		                </td>
+		                <td class="btn-group">
+		                    <a class="btn btn-danger btn-sm" href="?id=${btoa(work.id)}">
+		                        <i class="fas fa-trash"></i>
+		                    </a>
+		                </td>
+		                </tr>`;
+					});
+
+					document.getElementById('worksList').innerHTML = workOuput;
+				})
+			}
 }

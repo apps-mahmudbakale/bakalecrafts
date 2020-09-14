@@ -1,6 +1,5 @@
 <?php 
 include '../connection.php';
-include '../heroku.connection.php';
 $id = base64_decode($_GET['id']);
 $query = mysqli_query($db,"SELECT * FROM services WHERE service_id ='$id'");
 $row = mysqli_fetch_array($query);
@@ -181,7 +180,7 @@ $row = mysqli_fetch_array($query);
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="team.php" class="nav-link">
               <i class="nav-icon fas fa-users"></i>
               <p>
                 Team
@@ -189,7 +188,7 @@ $row = mysqli_fetch_array($query);
             </a>
           </li> 
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="works.php" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 Our Works
@@ -264,6 +263,7 @@ $row = mysqli_fetch_array($query);
             <div class="card-body">
                <div id="statusMsg"></div>
               <div class="form-group">
+                <input type="hidden" value="<?php echo base64_decode($_GET['id']); ?>" name="service_id">
                 <label for="inputName">Service Name</label>
                 <input type="text" id="Name" name="name" value="<?php echo $row['title'] ?>" class="form-control">
               </div>
@@ -284,7 +284,7 @@ $row = mysqli_fetch_array($query);
       <div class="row">
         <div class="col-12">
           <a href="#" class="btn btn-secondary">Cancel</a>
-          <input type="submit" value="Create new Porject" id="submitBtn" class="btn btn-success float-right">
+          <input type="submit" value="Update Service" id="submitBtn" class="btn btn-success float-right">
         </div>
       </div>
     </form>
