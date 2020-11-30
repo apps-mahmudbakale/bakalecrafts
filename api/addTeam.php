@@ -1,8 +1,10 @@
 <?php 
 require_once '../connection.php';
+require_once('php_image_magician.php');
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
 $uploadDir ='../assets/';
+$teamDir ='../assets/img/team/';
 $response = array(
 'type' => '',
 'message' => ''
@@ -20,7 +22,7 @@ if (isset($_POST['name']) || isset($_POST['rank'])) {
 	if (!empty($name) && !empty($rank)) {
 		$uploadStatus = 1;
 
-		$uploadFile = '';
+		$uploadFile = ''; 
 
 		if (!empty($_FILES['file']['name'])) {
 			$fileName = basename($_FILES['file']['name']);
@@ -32,7 +34,11 @@ if (isset($_POST['name']) || isset($_POST['rank'])) {
 			if (in_array($fileType, $allowTypes)) {
 				
 				if (move_uploaded_file($_FILES['file']['tmp_name'], $targetFilePath)) {
-					$uploadFile = $fileName;
+					$magicianObj = new imageLib($targetFilePath);
+					$magicianObj -> resizeImage(600, 600);
+						$magicianObj -> saveImage($teamDir.time().'.'.$fileType, 100);
+						unlink($targetFilePath);
+						$uploadFile = time().'.'.$fileType;
 					mysqli_query($db,"INSERT INTO `team`(`id`, `name`, `rank`, `phone`, `twitter`, `facebook`, `instagram`, `linkedn`, `picture`) VALUES (NULL,'$name','$rank','$phone','$twitter','$facebook','$instagram','$linkedn', '$uploadFile')");
 					$response['type'] = 'success';
 					$response['message'] = 'Form Submitted Successfully';

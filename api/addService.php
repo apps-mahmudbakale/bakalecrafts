@@ -1,9 +1,10 @@
 <?php 
-require_once '../heroku.connection.php';
 require_once '../connection.php';
+require_once('php_image_magician.php');
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
 $uploadDir ='../assets/';
+$serviceDir ='../assets/img/services/';
 $response = array(
 'type' => '',
 'message' => ''
@@ -23,12 +24,16 @@ if (isset($_POST['name']) || isset($_POST['description'])) {
 			$targetFilePath = $uploadDir . $fileName;
 			$fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
 
-			$allowTypes = array('jpg', 'png', 'jpeg');
+			$allowTypes = array('jpg', 'png', 'jpeg', 'JPG', 'PNG', 'JPEG');
 
 			if (in_array($fileType, $allowTypes)) {
 				
 				if (move_uploaded_file($_FILES['file']['tmp_name'], $targetFilePath)) {
-					$uploadFile = $fileName;
+					$magicianObj = new imageLib($targetFilePath);
+					$magicianObj -> resizeImage(600, 400);
+						$magicianObj -> saveImage($serviceDir.time().'.'.$fileType, 100);
+						unlink($targetFilePath);
+					$uploadFile = time().'.'.$fileType;
 					mysqli_query($db,"INSERT INTO `services`(`service_id`, `title`, `caption`, `body`) VALUES (NULL,'$name','$uploadFile','$description')");
 					$response['type'] = 'success';
 					$response['message'] = 'Form Submitted Successfully';

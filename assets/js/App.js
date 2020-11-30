@@ -106,7 +106,7 @@ class App{
 	                  </a>
                 </td>
                 <td>
-                            <img alt="Avatar" class="table-avatar" src="../assets/${service.caption}">
+                            <img alt="Avatar" class="table-avatar" src="../assets/img/services/${service.caption}">
                 </td>
                 <td class="project-actions text-right">
                     <a class="btn btn-primary btn-sm" href="serviceDetails.php?id=${btoa(service.service_id)}">
@@ -149,7 +149,7 @@ class App{
 		                  </a>
 	                </td>
 	                <td>
-	                            <img alt="Avatar" class="img img-rounded" style="width:3.9rem" src="../assets/${team.picture}">
+	                            <img alt="Avatar" class="img img-rounded" style="width:3.9rem" src="../assets/img/team/${team.picture}">
 	                </td>
 	                <td>
 		                  <a>
@@ -212,7 +212,7 @@ class App{
 			                  </a>
 		                </td>
 		                <td>
-		                            <img alt="Avatar" class="img img-rounded" style="width:3.9rem" src="../assets/${work.image}">
+		                            <img alt="Avatar" class="img img-rounded" style="width:3.9rem" src="../assets/img/portfolio/${work.image}">
 		                </td>
 		                <td class="btn-group">
 		                    <a class="btn btn-danger btn-sm" href="?id=${btoa(work.id)}">
@@ -223,6 +223,44 @@ class App{
 					});
 
 					document.getElementById('worksList').innerHTML = workOuput;
+				})
+			}
+
+
+
+			testimonyList(){
+				fetch('../../api/getTestimonies.php')
+				.then((res) => res.json())
+				.then((data) => {
+					var testimoniesOuput = '';
+					var sn =0;
+					data.testimonies.forEach( function(testimony) {
+						sn++;
+
+						testimoniesOuput +=`<tr>
+						<td>${sn}</td>
+						 <td>
+			                  <a>
+			                     ${testimony.name}
+			                  </a>
+		                </td>
+		                <td>
+			                  <a>
+			                     ${testimony.comment}
+			                  </a>
+		                </td>
+		                <td class="btn-group">
+		                    <a class="btn btn-info btn-sm" href="testimoniesEdit.php?id=${btoa(testimony.id)}">
+		                        <i class="fas fa-pencil-alt"></i>
+		                    </a>
+		                    <a class="btn btn-danger btn-sm" href="?id=${btoa(testimony.id)}">
+		                        <i class="fas fa-trash"></i>
+		                    </a>
+		                </td>
+		                </tr>`;
+					});
+
+					document.getElementById('testimonyList').innerHTML = testimoniesOuput;
 				})
 			}
 }

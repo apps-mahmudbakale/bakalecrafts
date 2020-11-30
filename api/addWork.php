@@ -1,8 +1,10 @@
 <?php 
 require_once '../connection.php';
+require_once('php_image_magician.php');
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
 $uploadDir ='../assets/';
+$workDir ='../assets/img/portfolio/';
 $response = array(
 'type' => '',
 'message' => ''
@@ -25,7 +27,11 @@ if (isset($_POST['name'])) {
 			if (in_array($fileType, $allowTypes)) {
 				
 				if (move_uploaded_file($_FILES['file']['tmp_name'], $targetFilePath)) {
-					$uploadFile = $fileName;
+					$magicianObj = new imageLib($targetFilePath);
+					$magicianObj -> resizeImage(800, 600);
+						$magicianObj -> saveImage($workDir.time().'.'.$fileType, 100);
+						unlink($targetFilePath);
+					$uploadFile = time().'.'.$fileType;
 					mysqli_query($db,"INSERT INTO `gallery`(`id`, `name`, `image`) VALUES (NULL,'$name','$uploadFile')");
 					$response['type'] = 'success';
 					$response['message'] = 'Form Submitted Successfully';

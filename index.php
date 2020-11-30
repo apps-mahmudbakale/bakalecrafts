@@ -9,7 +9,7 @@ include 'connection.php';
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Bakale Arts & Crafts Co. - Index</title>
+  <title>Bakale Arts & Crafts Co. Ltd</title>
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
 
@@ -35,10 +35,10 @@ include 'connection.php';
 
   <!-- ======= Header ======= -->
   <header id="header">
-    <div class="container d-flex" style="max-width: 1390px">
+    <div class="container d-flex" style="max-width: 1417px">
 
       <div class="logo mr-auto">
-        <h1 class="text-light"><a href="index.html">Bakale Arts & Crafts Co., Ltd<span>.</span></a></h1>
+        <h1 class="text-light"><a href="index.html">Bakale Arts & Crafts Co. Ltd<span>.</span></a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
@@ -50,9 +50,10 @@ include 'connection.php';
           <li><a href="#services">Services</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#team">Team</a></li>
-          <li><a href="#team">Certifications</a></li>
+          <li><a href="board.members.php">Board of Directors</a></li>
+          <li><a href="certifications.php">Certifications</a></li>
           <li><a href="#contact">Contact Us</a></li>
-          <li class="get-started"><a href="assets/Bakale_Gift&SouvenirsCatalogue.pdf" download>Our Catalogue</a></li>
+          <li class="get-started"><a href="assets/Catalogue.pdf" download>Our Catalogue</a></li>
         </ul>
       </nav><!-- .nav-menu -->
 
@@ -65,9 +66,9 @@ include 'connection.php';
     <div class="container">
       <div class="row d-flex align-items-center">
       <div class=" col-lg-6 py-5 py-lg-0 order-2 order-lg-1" data-aos="fade-right">
-        <h1>Your new Arts and Crafts experience with Bakale Arts & Crafts Co., Ltd</h1>
+        <h1>Welcome to the official Sites of Bakale Arts & Crafts Co. Ltd</h1>
         <h2>We are a leading professional manufacturer of customized merchandise, we offer a wide range of corporate souvenirs and promotional items. We are creative and dynamic team which are ready to serve your needs. We are ready to be partners with different souvenirs dealers. Our aim is to be your best souvenirs supplier in Africa.</h2>
-        <a href="assets/Bakale_Gift&SouvenirsCatalogue.pdf" download class="btn-get-started scrollto">Our Catalogue</a>
+        <a href="assets/Catalogue.pdf" download class="btn-get-started scrollto">Our Catalogue</a>
       </div>
       <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left">
         <img src="assets/img/BGS Logo Tranfnt.fw.png" class="img-fluid" alt="">
@@ -85,42 +86,18 @@ include 'connection.php';
 
         <div class="row no-gutters clients-wrap clearfix wow fadeInUp">
 
-          <div class="col-lg-2 col-md-4 col-6">
-            <div class="client-logo">
-              <img src="assets/img/clients/client-1.png" class="img-fluid" alt="" data-aos="flip-right">
-            </div>
-          </div>
+          <?php 
+            $query = mysqli_query($db,"SELECT * FROM clients ORDER BY RAND() LIMIT 6 ");
+
+            while ($roz = mysqli_fetch_array($query)) {
+          ?>
 
           <div class="col-lg-2 col-md-4 col-6">
             <div class="client-logo">
-              <img src="assets/img/clients/client-2.png" class="img-fluid" alt="" data-aos="flip-right" data-aos-delay="100">
+              <img src="assets/img/clients/<?php echo $roz['image'] ?>" class="img-fluid" alt="<?php echo $roz['name'] ?>" data-aos="flip-right">
             </div>
           </div>
-
-          <div class="col-lg-2 col-md-4 col-6">
-            <div class="client-logo">
-              <img src="assets/img/clients/client-3.png" class="img-fluid" alt="" data-aos="flip-right" data-aos-delay="200">
-            </div>
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6">
-            <div class="client-logo">
-              <img src="assets/img/clients/client-4.png" class="img-fluid" alt="" data-aos="flip-right" data-aos-delay="300">
-            </div>
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6">
-            <div class="client-logo">
-              <img src="assets/img/clients/client-5.png" class="img-fluid" alt="" data-aos="flip-right" data-aos-delay="400">
-            </div>
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6">
-            <div class="client-logo">
-              <img src="assets/img/clients/client-6.png" class="img-fluid" alt="" data-aos="flip-right" data-aos-delay="500">
-            </div>
-          </div>
-
+        <?php } ?>
         </div>
 
       </div>
@@ -134,9 +111,9 @@ include 'connection.php';
           <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-lg-start"></div>
           <div class="col-xl-7 pl-0 pl-lg-5 pr-lg-1 d-flex align-items-stretch">
             <div class="content d-flex flex-column justify-content-center">
-              <h3 data-aos="fade-in" data-aos-delay="100">About Bakale Arts and Crafts Co., Ltd</h3>
+              <h3 data-aos="fade-in" data-aos-delay="100">About Bakale Arts and Crafts Co. Ltd</h3>
               <p data-aos="fade-in">
-                Bakale Arts & Crafts Co., Ltd. is an Art and Craft Company, which Specializes in Designing and Production of Corprate Souvenirs and Promotional items, It was Founded in 2020. <br>  Our Head Office, located in Kano State, Nigeria.
+                Bakale Arts & Crafts Co. Ltd. is an Art and Craft Company, which Specializes in Designing and Production of Corprate Souvenirs and Promotional items, It was Founded in 2020. <br>  Our Head Office, located in Kano State, Nigeria.
               </p>
               <div class="row">
                 <div class="col-md-10 icon-box" data-aos="fade-up">
@@ -179,7 +156,7 @@ include 'connection.php';
           <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-right">
             <div class="card">
               <div class="card-img">
-                <img src="assets/<?php echo $row['caption']; ?>" alt="...">
+                <img src="assets/img/services/<?php echo $row['caption']; ?>" alt="...">
               </div>
               <div class="card-body">
                 <h5 class="card-title"><a href=""><?php echo $row['title']; ?></a></h5>
@@ -212,9 +189,9 @@ include 'connection.php';
           
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
-              <img src="assets/<?php echo $row['image'] ?>" class="img-fluid" alt="">
+              <img src="assets/img/portfolio/<?php echo $row['image'] ?>" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a href="assets/<?php echo $row['image'] ?>" data-gall="portfolioGallery" class="venobox" title="<?php echo $row['name'] ?>"><i class="icofont-plus-circle"></i></a>
+                <a href="assets/img/portfolio/<?php echo $row['image'] ?>" data-gall="portfolioGallery" class="venobox" title="<?php echo $row['name'] ?>"><i class="icofont-plus-circle"></i></a>
                 <a href="#" title="More Details"><i class="icofont-link"></i></a>
               </div>
               <div class="portfolio-info">
@@ -248,7 +225,7 @@ include 'connection.php';
           while ($row = mysqli_fetch_array($query)) {?>
             <div class="col-xl-3 col-lg-4 col-md-6">
               <div class="member" data-aos="fade-up">
-                <div class="pic"><img src="assets/<?php echo $row['picture'] ?>" alt=""></div>
+                <div class="pic"><img src="assets/img/team/<?php echo $row['picture'] ?>" alt=""></div>
                 <h4><?php echo $row['name'] ?></h4>
                 <span><?php echo $row['rank'] ?></span>
                 <div class="social">
@@ -271,69 +248,25 @@ include 'connection.php';
 
         <div class="section-title">
           <h2 data-aos="fade-in">Testimonies</h2>
-          <p data-aos="fade-in">Some Appreciations of our beloved customers.</p>
+          <p data-aos="fade-in">Some Appreciations from our beloved customers.</p>
         </div>
+        <?php 
+        $monies = mysqli_query($db,"SELECT * FROM testimonies");
 
+        while ($tsrows = mysqli_fetch_array($monies)) {
+         ?>
         <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up">
           <div class="col-lg-5">
             <i class="bx bx-help-circle"></i>
-            <h4>Non consectetur a erat nam at lectus urna duis?</h4>
+            <h4><?php echo strtoupper($tsrows['name']) ?></h4>
           </div>
           <div class="col-lg-7">
             <p>
-              Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+              <?php echo $tsrows['comment'] ?>
             </p>
           </div>
         </div><!-- End F.A.Q Item-->
-
-        <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-          <div class="col-lg-5">
-            <i class="bx bx-help-circle"></i>
-            <h4>Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque?</h4>
-          </div>
-          <div class="col-lg-7">
-            <p>
-              Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim.
-            </p>
-          </div>
-        </div><!-- End F.A.Q Item-->
-
-        <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-          <div class="col-lg-5">
-            <i class="bx bx-help-circle"></i>
-            <h4>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi?</h4>
-          </div>
-          <div class="col-lg-7">
-            <p>
-              Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus.
-            </p>
-          </div>
-        </div><!-- End F.A.Q Item-->
-
-        <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
-          <div class="col-lg-5">
-            <i class="bx bx-help-circle"></i>
-            <h4>Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?</h4>
-          </div>
-          <div class="col-lg-7">
-            <p>
-              Aperiam itaque sit optio et deleniti eos nihil quidem cumque. Voluptas dolorum accusantium sunt sit enim. Provident consequuntur quam aut reiciendis qui rerum dolorem sit odio. Repellat assumenda soluta sunt pariatur error doloribus fuga.
-            </p>
-          </div>
-        </div><!-- End F.A.Q Item-->
-
-        <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
-          <div class="col-lg-5">
-            <i class="bx bx-help-circle"></i>
-            <h4>Tempus quam pellentesque nec nam aliquam sem et tortor consequat?</h4>
-          </div>
-          <div class="col-lg-7">
-            <p>
-              Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in
-            </p>
-          </div>
-        </div><!-- End F.A.Q Item-->
-
+    <?php } ?>
       </div>
     </section><!-- End Frequently Asked Questions Section -->
 
@@ -342,7 +275,7 @@ include 'connection.php';
       <div class="container">
 
         <div class="section-title">
-          <h2 data-aos="fade-in">To ContactUs is very easy by visiting our office or our e-platforms.</p>
+          <h2 data-aos="fade-in">Contact </p>
         </div>
 
         <div class="row">
@@ -354,21 +287,21 @@ include 'connection.php';
                 <div class="info-box" data-aos="fade-up">
                   <i class="bx bx-map"></i>
                   <h3>Our Address</h3>
-                  <p>A108 Adam Street, New York, NY 535022</p>
+                  <p>Zoo Road, Kano State - Nigeria</p>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="info-box mt-4" data-aos="fade-up" data-aos-delay="100">
                   <i class="bx bx-envelope"></i>
                   <h3>Email Us</h3>
-                  <p>info@example.com<br>contact@example.com</p>
+                  <p>info@bakalecraft.com<br>sales@bakalecraft.com</p>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="info-box mt-4" data-aos="fade-up" data-aos-delay="100">
                   <i class="bx bx-phone-call"></i>
                   <h3>Call Us</h3>
-                  <p>+1 5589 55488 55<br>+1 6678 254445 41</p>
+                  <p>+2349065929138<br>+2348034237875</p>
                 </div>
               </div>
             </div>
@@ -420,7 +353,7 @@ include 'connection.php';
 
         <div class="row  justify-content-center">
           <div class="col-lg-6">
-            <h3>Bakale Arts & Crafts Co., Ltd.</h3>
+            <h3>Bakale Arts & Crafts Co. Ltd.</h3>
             <p>We Are Creative, Be With Us</p>
           </div>
         </div>
@@ -434,11 +367,11 @@ include 'connection.php';
         </div>
 
         <div class="social-links">
-          <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-          <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-          <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-          <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-          <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+          <a href="https://twitter.com/@bakalecraft" target="_blank" class="twitter"><i class="bx bxl-twitter"></i></a>
+          <a href="https://web.facebook.com/Bakale-Arts-Crafts-Co-Ltd-104055934545025/" target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
+          <a href="https://www.instagram.com/bakalecraft/" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
+          <a href="https://skype.com/live:cid.abce5ce5cb5d3613265" class="google-plus"><i class="bx bxl-skype"></i></a>
+          <a href="https://www.linkedin.com/in/bakale-arts-and-crafts-co-ltd-9b80531b6/" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
         </div>
 
       </div>
@@ -446,7 +379,7 @@ include 'connection.php';
 
     <div class="container footer-bottom clearfix">
       <div class="copyright">
-        &copy; Copyright <?php echo date('Y') ?> <strong><span> Bakale Arts & Crafts Co., Ltd</span></strong>. All Rights Reserved
+      Copyright  &copy; <?php echo date('Y') ?> <strong><span> Bakale Arts & Crafts Co. Ltd</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->

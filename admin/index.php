@@ -27,7 +27,7 @@ include '../connection.php';
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="index.php"><b>Bakale</b>Gift & Souvenirs</a>
+    <a href="index.php"><b>Bakale</b> Arts & Crafts Co. Ltd</a>
   </div>
   <!-- /.login-logo -->
   <?php 
@@ -38,7 +38,7 @@ include '../connection.php';
         $query = mysqli_query($db,"SELECT * FROM admin WHERE username = '$username' AND password = '$password'");
 
         if (mysqli_num_rows($query) > 0) {
-            echo "<script>window.location='admin/dashboard.php'</script>";
+            echo "<script>window.location='dashboard.php'</script>";
         }else{
 
         }
